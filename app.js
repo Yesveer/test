@@ -11,7 +11,7 @@ app.get('/open-app', (req, res) => {
     const appPath = 'C:\\Program Files\\3D Systems\\3D Sprint 5.2.0.1034\\3DSprint.exe';
 
     // Execute the command to open the application
-    exec(`start "" "${appPath}"`, (error, stdout, stderr) => {
+    exec(`start "${appPath}"`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error opening application: ${error.message}`);
             return res.status(500).send('Error opening application');
