@@ -3,7 +3,7 @@ const { exec } = require('child_process');
 const path = require('path');
 
 const app = express();
-const PORT = 5000; // You can change the port as needed
+// const PORT = 5000; // You can change the port as needed
 
 // Define a route to handle button click
 app.get('/open-app', (req, res) => {
@@ -26,6 +26,6 @@ app.get('/open-app', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(process.env.PORT || 5000, function(){
+    console.log("Server started at Port 5000");
 });
